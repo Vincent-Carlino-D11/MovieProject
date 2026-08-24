@@ -32,5 +32,7 @@ public class Movie {
         return directors;
     }
 
-
+    public String toString(){
+        return (getTitle() + " " + getActor() + " " + getYear() + " " + getDirector());
+    }
 }

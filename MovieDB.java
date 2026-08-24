@@ -10,7 +10,7 @@ public class MovieDB {
         System.out.println("LOGGIN' COMPLETED MOVIES");
         System.out.println();
         for(Movie m : testList){
-            System.out.println(m.getTitle() + " " + m.getActor() + " " + m.getYear() + " " + m.getDirector());
+            System.out.println(m);
         }
     }
 
