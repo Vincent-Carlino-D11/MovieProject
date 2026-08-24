@@ -5,11 +5,11 @@ import java.util.Scanner;
 
 public class MovieDB {
     public static void main(String[] args){
-        readMoviesintoAL("test.txt");
+        readMoviesIntoAL("test.txt");
     }
 
 
-    public static ArrayList<Movie> readMoviesintoAL(String filename){
+    public static ArrayList<Movie> readMoviesIntoAL(String filename){
     // public static ArrayList<String> readMoviesintoAL(String filename){
         ArrayList<Movie> ret = new ArrayList<Movie>();
         // ArrayList<String> ret = new ArrayList<String>();
