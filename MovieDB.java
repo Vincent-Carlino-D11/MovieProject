@@ -42,7 +42,7 @@ public class MovieDB {
 
             System.out.println("ADDING MOVIE: " + title + leadActor + releaseYear + director);
             ret.add(new Movie(title, leadActor, releaseYear, director));
-            ret.add(title + leadActor + releaseYear + director);
+            //ret.add(title + leadActor + releaseYear + director);
             if(!sc.hasNext()){
                 break;
             }
