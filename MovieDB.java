@@ -5,6 +5,10 @@ public class MovieDB {
     private String directors;
     
 
+    public static void main(String[] args) {
+        
+    }
+
     public MovieDB(String t, String a, int y, String d){
         title = t;
         actor = a;
@@ -27,4 +31,6 @@ public class MovieDB {
     public String getDirector(){
         return directors;
     }
+
+
 }
