@@ -4,14 +4,26 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MovieDB {
+
+    
+    private static String RESET = "\u001B[0m";
+    private static String RED = "\u001B[31m";
+    private static String GREEN = "\u001B[32m";
+    private static String BLUE = "\u001B[34m";
+    private static String YELLOW = "\u001B[33m";
+    private static String PURPLE = "\u001B[35m";
+
+
     public static void main(String[] args){
+        System.out.println(RESET);
         ArrayList<Movie> testList = readMoviesIntoAL("movie.txt");
         System.out.println();
         System.out.println("LOGGIN' COMPLETED MOVIES");
         System.out.println();
-        for(Movie m : testList){
-            System.out.println(m);
-        }
+        //for(Movie m : testList){
+        //    System.out.println(m);
+        //}
+        printPretty(testList);
     }
 
 
@@ -49,5 +61,41 @@ public class MovieDB {
         sc.close();
         } catch(FileNotFoundException e){}
         return ret;
+    }
+
+    public static void printPretty(ArrayList<Movie> al){
+        int longName = 0;
+        int longActor = 0;
+        int longDirector = 0;
+        for(Movie m : al){
+            if(m.getTitle().length() > longName){
+                longName = m.getTitle().length();
+            }
+            if(m.getActor().length() > longActor){
+                longActor = m.getActor().length();
+            }
+            if(m.getDirector().length() > longDirector){
+                longDirector = m.getDirector().length();
+            }
+        }
+        for(Movie m: al){
+            System.out.print(m.getTitle());
+            for(int i = m.getTitle().length(); i <= longName; i++){
+                System.out.print(" ");
+            }
+            System.out.print(BLUE + "| " + RESET);
+            System.out.print(m.getActor());
+            for(int i = m.getActor().length(); i <= longActor; i++){
+                System.out.print(" ");
+            }
+            System.out.print(BLUE + "| " + RESET);
+            System.out.print(m.getYear());
+            System.out.print(BLUE + " | " + RESET);
+            System.out.print(m.getDirector());
+            for(int i = m.getDirector().length(); i <= longDirector; i++){
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
     }
 }
